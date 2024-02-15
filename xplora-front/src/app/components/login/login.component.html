@@ -1,0 +1,24 @@
+<title>Xplora | login</title>
+<app-navbar></app-navbar>
+<div class="content-wrapper">
+<div class="login-div">
+  <img src="../../../assets/pexels-pixabay-417173 (1).jpg" alt="">
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)" class="login-form">
+    <h1 style="font-weight: bold;">Login</h1>
+    <div class="input-div">
+      <label for="email">Email:</label> <br>
+      <input type="email" formControlName="email" placeholder="johndoe@gmail.com">
+      <div class="email-error" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">Email is required</div>
+    </div>
+    <div class="input-div">
+      <label for="password">Password:</label> <br>
+      <input type="password" name="password" formControlName="password" placeholder="* * * * * * * *">
+      <div class="pass-error" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">Password is required</div>
+    </div>
+    <div class="input-div">
+      <input type="submit" class="login-btn" value="login">
+    </div>
+  </form>
+</div>
+</div>
+<app-footer></app-footer>

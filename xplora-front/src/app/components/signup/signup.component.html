@@ -1,0 +1,29 @@
+<title>Xplora | signup</title>
+<app-navbar></app-navbar>
+<div class="content-wrapper">
+<div class="login-div">
+  <img src="../../../assets/pexels-pixabay-417173 (1).jpg" alt="">
+  <form [formGroup]="signupForm" (ngSubmit)="signupUser(signupForm.value)" class="login-form">
+    <h1 style="font-weight: bold;">Create Account</h1>
+    <div class="input-div">
+      <label for="email">Full name:</label> <br>
+      <input type="email" formControlName="full_name" placeholder="John Doe">
+      <div class="email-error" *ngIf="signupForm.get('full_name')?.invalid && signupForm.get('full_name')?.touched">Full name is required</div>
+    </div>
+    <div class="input-div">
+      <label for="email">Email:</label> <br>
+      <input type="email" formControlName="email" placeholder="johndoe@gmail.com">
+      <div class="email-error" *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">Email is required</div>
+    </div>
+    <div class="input-div">
+      <label for="password">Password:</label> <br>
+      <input type="password" name="password" formControlName="password" placeholder="* * * * * * * *">
+      <div class="pass-error" *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">Password is required</div>
+    </div>
+    <div class="input-div">
+      <input type="submit" class="login-btn" value="Create Account">
+    </div>
+  </form>
+</div>
+</div>
+<app-footer></app-footer>
