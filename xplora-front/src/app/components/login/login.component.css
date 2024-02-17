@@ -47,6 +47,11 @@
   border: 2px solid green;
 }
 
+#inactive {
+  background-color: #dbdbdb;
+  border: 2px solid #dbdbdb;
+}
+
 .login-btn:hover {
   background-color: green;
   color: #ffffff;

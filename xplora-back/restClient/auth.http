@@ -1,0 +1,21 @@
+### Signup a user
+
+POST http://localhost:3000/user/signup
+Content-Type: application/json
+
+{
+    "full_name" : "Kenedy maina",
+    "email": "kennynet66@gmail.com",
+    "password": "Boomplay@1"
+}
+
+
+### Login a user
+
+POST http://localhost:3000/user/login
+Content-Type: application/json
+
+{
+    "email": "kennynet66@gmail.com",
+    "password": "Boomplay@1"
+}

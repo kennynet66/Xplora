@@ -9,13 +9,13 @@
   max-width: 800px;
 }
 
-.text-content > h1 {
+.text-content>h1 {
   font-size: 50px;
   text-align: center;
   color: #ffffff;
 }
 
-.text-content > p {
+.text-content>p {
   text-align: center;
   font-size: 22px;
   color: #ffffff;
@@ -52,23 +52,22 @@
   border-top-right-radius: 10px;
 }
 
-.card-desc{
+.card-desc {
   margin: 2%;
- }
+}
 
- .view-more {
-   padding: 5px;
-   margin: 2%;
-   width: 90%;
-   cursor: pointer;
-   color: blue;
-   border-radius: 5px;
-   border: 2px solid blue;
-   background-color: transparent;
- }
+.view-more {
+  padding: 5px;
+  margin: 2%;
+  width: 90%;
+  cursor: pointer;
+  color: blue;
+  border-radius: 5px;
+  border: 2px solid blue;
+  background-color: transparent;
+}
 
- .view-more:hover {
+.view-more:hover {
   background-color: blue;
   color: #ffffff;
- }
-
+}

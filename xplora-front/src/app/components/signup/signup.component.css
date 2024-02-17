@@ -73,6 +73,10 @@
   color: red;
   margin-top: 2%;
 }
+#inactive {
+  background-color: #dbdbdb;
+  border: 2px solid #dbdbdb;
+}
 
 @media (max-width: 750px) {
  .login-div > img {

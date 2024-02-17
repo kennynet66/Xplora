@@ -8,12 +8,14 @@
     <div class="input-div">
       <label for="email">Full name:</label> <br>
       <input type="email" formControlName="full_name" placeholder="John Doe">
-      <div class="email-error" *ngIf="signupForm.get('full_name')?.invalid && signupForm.get('full_name')?.touched">Full name is required</div>
+      <div class="email-error" *ngIf="signupForm.get('full_name')?.invalid && signupForm.get('full_name')?.touched && !signupForm.get('full_name')?.dirty">Full name is required</div>
+      <div class="email-error" *ngIf="signupForm.get('full_name')?.invalid && signupForm.get('full_name')?.touched && signupForm.get('full_name')?.dirty">Minimum of 3 characters</div>
     </div>
     <div class="input-div">
       <label for="email">Email:</label> <br>
       <input type="email" formControlName="email" placeholder="johndoe@gmail.com">
-      <div class="email-error" *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">Email is required</div>
+      <div class="email-error" *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched && !signupForm.get('email')?.dirty">Email is required</div>
+      <div class="email-error" *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched && signupForm.get('email')?.dirty">Invalid email format</div>
     </div>
     <div class="input-div">
       <label for="password">Password:</label> <br>
@@ -21,7 +23,8 @@
       <div class="pass-error" *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">Password is required</div>
     </div>
     <div class="input-div">
-      <input type="submit" class="login-btn" value="Create Account">
+      <input type="submit" *ngIf="signupForm.invalid" id="inactive" class="login-btn" disabled value="Create Account">
+      <input type="submit" *ngIf="signupForm.valid" class="login-btn" value="Create Account">
     </div>
   </form>
 </div>

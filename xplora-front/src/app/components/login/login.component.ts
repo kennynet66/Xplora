@@ -15,6 +15,10 @@ import { RouterLink } from '@angular/router';
 export class LoginComponent {
 
   loginForm!: FormGroup
+  isLoggedIn!: Boolean
+  login(){
+    this.isLoggedIn = true
+  }
 
   constructor (private fb:FormBuilder){
     this.loginForm = this.fb.group({

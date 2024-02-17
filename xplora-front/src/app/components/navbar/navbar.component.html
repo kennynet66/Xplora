@@ -1,9 +1,11 @@
 <nav>
   <div class="logo">XPLORA</div>
+  <i class="fa-solid fa-bars" class="menu-icon"></i>
     <ul class="links">
       <a routerLink="" >Home</a>
-      <a>Contact us</a>
-      <a routerLink="/login">Login</a>
-      <a routerLink="/signup">Signup</a>
+      <a routerLink="/contact">Contact us</a>
+      <a *ngIf="!isLoggedIn" routerLink="/login">Login</a>
+      <a *ngIf="!isLoggedIn" routerLink="/signup">Signup</a>
+      <a *ngIf="isLoggedIn" (click)="logout()" routerLink="/login">Logout</a>
     </ul>
 </nav>

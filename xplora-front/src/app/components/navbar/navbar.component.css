@@ -8,6 +8,10 @@ nav {
   color: #fff;
 }
 
+.menu-icon {
+  display: none;
+}
+
 .logo {
   font-weight: bold;
   font-size: 22px;
@@ -33,5 +37,8 @@ nav {
 @media (max-width: 425px) {
   .links >a {
     display: none;
+  }
+  .menu-icon{
+    display: flex;
   }
  }

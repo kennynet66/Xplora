@@ -16,7 +16,8 @@
       <div class="pass-error" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">Password is required</div>
     </div>
     <div class="input-div">
-      <input type="submit" class="login-btn" value="login">
+      <input *ngIf="loginForm.invalid" disabled type="submit" id="inactive" class="login-btn" value="login">
+      <input *ngIf="!loginForm.invalid" type="submit" class="login-btn" value="login" (click)= "login()" routerLink="/user-dashboard">
     </div>
   </form>
 </div>
