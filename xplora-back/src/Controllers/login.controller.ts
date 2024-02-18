@@ -56,15 +56,22 @@ export const loginUser = (async (req: Request, res: Response) => {
                         email: user[0].email
                     }
                     if (!user[0]?.isAdmin) {
-                        const token = createToken(details);
-                        return res.status(200).json({
-                            success: "User login success",
-                            token
-                        })
+                        if (user[0].isDeleted) {
+                            return res.status(202).json({
+                                deactivated: "Your account is deactivated"
+                            })
+                        } else {
+                            const token = createToken(details);
+                            return res.status(200).json({
+                                user: "User login success",
+                                token
+                            })
+                        }
+
                     } else {
                         const token = createAdminToken(details);
                         return res.status(200).json({
-                            success: "Admin login success",
+                            admin: "Admin login success",
                             token
                         })
                     }

@@ -3,8 +3,10 @@
 <div class="content-wrapper">
 <div class="login-div">
   <img src="../../../assets/pexels-pixabay-417173 (1).jpg" alt="">
-  <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)" class="login-form">
+  <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)" class="login-form">
     <h1 style="font-weight: bold;">Login</h1>
+    <div class="error" *ngIf="errorDiv">{{errorMsg}}</div>
+    <div class="success" *ngIf="successDiv">{{successMsg}}</div>
     <div class="input-div">
       <label for="email">Email:</label> <br>
       <input type="email" formControlName="email" placeholder="johndoe@gmail.com">
@@ -17,7 +19,7 @@
     </div>
     <div class="input-div">
       <input *ngIf="loginForm.invalid" disabled type="submit" id="inactive" class="login-btn" value="login">
-      <input *ngIf="!loginForm.invalid" type="submit" class="login-btn" value="login" (click)= "login()" routerLink="/user-dashboard">
+      <input *ngIf="!loginForm.invalid" type="submit" class="login-btn" value="login">
     </div>
   </form>
 </div>

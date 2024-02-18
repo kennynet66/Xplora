@@ -10,9 +10,5 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  isLoggedIn: Boolean = true
 
-  logout(){
-    this.isLoggedIn = false
-  }
 }
