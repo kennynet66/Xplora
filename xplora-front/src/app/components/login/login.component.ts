@@ -24,10 +24,12 @@ export class LoginComponent {
 
   errorDiv = false;
   successDiv = false;
+  isAdmin!:Boolean
+  isLoggedIn!:Boolean
 
   constructor (private fb:FormBuilder, private router: Router, private authservice: AuthService){
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]]
     })
   }
@@ -42,12 +44,13 @@ export class LoginComponent {
     }, 3000);
   }
   // success handling
-  success(msg: string) {
+  success(msg: string, route: string) {
     this.successDiv = true
     this.successMsg = msg
 
     setTimeout(() => {
       this.successDiv = false
+      this.router.navigate([route])
     }, 2000);
   }
 
@@ -63,9 +66,12 @@ export class LoginComponent {
       } else if(res.deactivated) {
         return this.errors(res.deactivated)
       } else if (res.admin) {
-        return this.success(res.admin)
+        this.isAdmin = true
+        localStorage.setItem('token', JSON.stringify(res.token))
+        return this.success(res.admin, 'admin-dashboard')
       } else if (res.user){
-        return this.success(res.user);
+        localStorage.setItem('token', JSON.stringify(res.token))
+        return this.success(res.user, 'user-dashboard');
       } else {
         return
       }

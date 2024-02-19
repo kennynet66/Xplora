@@ -1,0 +1,51 @@
+.destinations {
+  color: #ffffff;
+}
+
+.destination-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  color: #000;
+  padding: 20px;
+}
+
+.card {
+  max-width: 300px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: #ffffff;
+}
+
+.card-img {
+  width: 300px;
+  height: 250px;
+  max-width: 350px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-desc {
+  margin: 2%;
+}
+
+.review {
+  width: 50%;
+  padding: 10px;
+  cursor: pointer;
+  background-color: green;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  margin: 2%;
+}
+
+.review:hover{
+  background-color: yellowgreen;
+}

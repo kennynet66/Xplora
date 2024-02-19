@@ -50,6 +50,7 @@
 #inactive {
   background-color: #dbdbdb;
   border: 2px solid #dbdbdb;
+  cursor: not-allowed;
 }
 
 .login-btn:hover {

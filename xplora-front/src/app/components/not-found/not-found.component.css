@@ -1,0 +1,12 @@
+::-webkit-scrollbar{
+  display: none;
+}
+.container > img {
+  width: 100%;
+  height: 99.5%;
+  object-fit: cover;
+}
+
+.container {
+  height: 90vh;
+}

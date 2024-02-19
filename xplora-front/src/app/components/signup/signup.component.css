@@ -76,6 +76,24 @@
 #inactive {
   background-color: #dbdbdb;
   border: 2px solid #dbdbdb;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #ffffff;
+  background-color: #ED2939;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 5%;
+}
+.success {
+  background-color: #98FB98;
+  color: #ffffff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 5%;
 }
 
 @media (max-width: 750px) {

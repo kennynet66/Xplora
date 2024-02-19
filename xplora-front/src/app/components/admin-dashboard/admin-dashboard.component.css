@@ -1,0 +1,19 @@
+.dash-content{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.dashboard {
+  /* justify-self: end; */
+  width: 78vw;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+

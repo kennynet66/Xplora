@@ -1,0 +1,65 @@
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background-color: #fff;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 5px;
+  gap: 20px;
+  width: max-content;
+  width: 400px;
+}
+.actions{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.delete {
+  background-color: red;
+  border: none;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+.delete:hover {
+  cursor: pointer;
+  background-color: rgb(148, 16, 16);
+}
+
+.deactivate {
+  background-color: #FFBF00;
+  padding: 5px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.deactivate:hover {
+  background-color: #dfa805;
+}
+
+.error {
+  text-align: center;
+  color: #ffffff;
+  padding: 10px;
+  margin: 2%;
+  border-radius: 5px;
+  background-color: red;
+}
+.success {
+  text-align: center;
+  color: #ffffff;
+  padding: 10px;
+  margin: 2%;
+  border-radius: 5px;
+  background-color: greenyellow;
+}

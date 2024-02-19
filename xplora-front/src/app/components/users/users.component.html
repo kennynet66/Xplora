@@ -1,0 +1,14 @@
+<section class="users">
+  <div class="error" *ngIf="errorDiv">{{errorMsg}}</div>
+  <div class="success" *ngIf="successDiv">{{successMsg}}</div>
+  <div class="cards">
+    <div class="card" *ngFor="let user of users; let i = index">
+      <div class="full-name">{{user.full_name}}</div>
+      <div class="email">{{user.email}}</div>
+      <div class="actions">
+        <button class="delete" (click)="deleteUser(user.id)">Delete</button>
+        <button class="deactivate"(click)="deactivateUser(user.id)">Deactivate</button>
+      </div>
+    </div>
+  </div>
+</section>

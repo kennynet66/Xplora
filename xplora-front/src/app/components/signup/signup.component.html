@@ -5,6 +5,8 @@
   <img src="../../../assets/pexels-pixabay-417173 (1).jpg" alt="">
   <form [formGroup]="signupForm" (ngSubmit)="signupUser(signupForm.value)" class="login-form">
     <h1 style="font-weight: bold;">Create Account</h1>
+    <div class="success" *ngIf="successDiv">{{successMsg}}</div>
+    <div class="error" *ngIf="errorDiv">{{errorMsg}}</div>
     <div class="input-div">
       <label for="email">Full name:</label> <br>
       <input type="email" formControlName="full_name" placeholder="John Doe">
@@ -20,7 +22,8 @@
     <div class="input-div">
       <label for="password">Password:</label> <br>
       <input type="password" name="password" formControlName="password" placeholder="* * * * * * * *">
-      <div class="pass-error" *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">Password is required</div>
+      <div class="pass-error" *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched && !signupForm.get('password')?.dirty">Password is required</div>
+      <div class="pass-error" *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched && signupForm.get('password')?.dirty">Minimum Password length is 4 characters</div>
     </div>
     <div class="input-div">
       <input type="submit" *ngIf="signupForm.invalid" id="inactive" class="login-btn" disabled value="Create Account">
