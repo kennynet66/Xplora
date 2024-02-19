@@ -59,6 +59,10 @@ export class SignupComponent {
       console.log(res);
       if(res.success) {
         this.success(res.success)
+      } else if (res.exists){
+        console.log("Is existing",res.exists);
+
+        this.error(res.exists)
       }
     })
 

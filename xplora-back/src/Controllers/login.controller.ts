@@ -8,10 +8,11 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-interface userDetails {
+export interface userDetails {
     id: string
     full_name: string
     email: string
+    profile_img: string
 }
 
 const maxAge = 3 * 24 * 24 * 60;
@@ -53,7 +54,8 @@ export const loginUser = (async (req: Request, res: Response) => {
                     const details: userDetails = {
                         id: user[0].id,
                         full_name: user[0].id,
-                        email: user[0].email
+                        email: user[0].email,
+                        profile_img: user[0].profile_img
                     }
                     if (!user[0]?.isAdmin) {
                         if (user[0].isDeleted) {

@@ -9,3 +9,7 @@ body{
   background-size: cover;
   background-attachment: fixed;
 }
+
+input{
+  text-transform: lowercase;
+}

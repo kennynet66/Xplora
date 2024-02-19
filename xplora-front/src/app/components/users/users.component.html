@@ -2,7 +2,9 @@
   <div class="error" *ngIf="errorDiv">{{errorMsg}}</div>
   <div class="success" *ngIf="successDiv">{{successMsg}}</div>
   <div class="cards">
-    <div class="card" *ngFor="let user of users; let i = index">
+    <div class="test" *ngFor="let user of users; let i = index">
+    <div class="card"  *ngIf="!user.isAdmin">
+      <!-- <input *ngIf=""> -->
       <div class="full-name">{{user.full_name}}</div>
       <div class="email">{{user.email}}</div>
       <div class="actions">
@@ -10,5 +12,6 @@
         <button class="deactivate"(click)="deactivateUser(user.id)">Deactivate</button>
       </div>
     </div>
+  </div>
   </div>
 </section>

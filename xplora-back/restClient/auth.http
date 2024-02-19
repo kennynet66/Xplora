@@ -5,7 +5,7 @@ Content-Type: application/json
 
 {
     "full_name" : "Kenedy maina",
-    "email": "kennynet66@gmail.com",
+    "email": "doe@gmail.com",
     "password": "Boomplay@1"
 }
 
@@ -16,7 +16,7 @@ POST http://localhost:3000/user/login
 Content-Type: application/json
 
 {
-    "email": "sharon@gmail.com",
+    "email": "kennynet66@gmail.com",
     "password": "Boomplay@1"
 }
 
@@ -25,7 +25,7 @@ GET http://localhost:3000/user/users
 token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXRhaWxzIjp7ImlkIjoiYTkxNmUzMzQtY2JlOC00M2RhLWJmNmQtMGViNzM2YmUyZmMwIiwiZnVsbF9uYW1lIjoiYTkxNmUzMzQtY2JlOC00M2RhLWJmNmQtMGViNzM2YmUyZmMwIiwiZW1haWwiOiJrZW5ueW5ldDY2QGdtYWlsLmNvbSJ9LCJpYXQiOjE3MDgyOTU3OTgsImV4cCI6MTcwODM5OTQ3OH0.AfLmRLuJZLzm-Zb56oCWcevwsv5K5CbOgI4eXRw8Nyc
 
 ### Get user by id
-GET http://localhost:3000/user/087d11c1-9fd7-4bae-b2c1-38119673146f
+GET http://localhost:3000/user/9911fdb8-1705-4ed7-8103-e43c631b87c7
 token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXRhaWxzIjp7ImlkIjoiYTkxNmUzMzQtY2JlOC00M2RhLWJmNmQtMGViNzM2YmUyZmMwIiwiZnVsbF9uYW1lIjoiYTkxNmUzMzQtY2JlOC00M2RhLWJmNmQtMGViNzM2YmUyZmMwIiwiZW1haWwiOiJrZW5ueW5ldDY2QGdtYWlsLmNvbSJ9LCJpYXQiOjE3MDgyOTU3OTgsImV4cCI6MTcwODM5OTQ3OH0.AfLmRLuJZLzm-Zb56oCWcevwsv5K5CbOgI4eXRw8Nyc
 
 ### Deactivate a user account
@@ -38,4 +38,7 @@ token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXRhaWxzIjp7ImlkIjoiYTkxNmUzMzQt
 
 ### Delete a user
 DELETE   http://localhost:3000/user/delete/087d11c1-9fd7-4bae-b2c1-38119673146f
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXRhaWxzIjp7ImlkIjoiYTkxNmUzMzQtY2JlOC00M2RhLWJmNmQtMGViNzM2YmUyZmMwIiwiZnVsbF9uYW1lIjoiYTkxNmUzMzQtY2JlOC00M2RhLWJmNmQtMGViNzM2YmUyZmMwIiwiZW1haWwiOiJrZW5ueW5ldDY2QGdtYWlsLmNvbSJ9LCJpYXQiOjE3MDgyOTU3OTgsImV4cCI6MTcwODM5OTQ3OH0.AfLmRLuJZLzm-Zb56oCWcevwsv5K5CbOgI4eXRw8Nyc
+
+### Check user details
+GET http://localhost:3000/user/details/user
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ.eyJkZXRhaWxzIjp7ImlkIjoiYTkxNmUzMzQtY2JlOC00M2RhLWJmNmQtMGViNzM2YmUyZmMwIiwiZnVsbF9uYW1lIjoiYTkxNmUzMzQtY2JlOC00M2RhLWJmNmQtMGViNzM2YmUyZmMwIiwiZW1haWwiOiJrZW5ueW5ldDY2QGdtYWlsLmNvbSJ9LCJpYXQiOjE3MDgyOTU3OTgsImV4cCI6MTcwODM5OTQ3OH0.AfLmRLuJZLzm-Zb56oCWcevwsv5K5CbOgI4eXRw8Nyc

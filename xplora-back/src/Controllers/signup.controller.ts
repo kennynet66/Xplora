@@ -17,19 +17,29 @@ export const createUser = async (req: Request, res: Response) => {
         const pool = await mssql.connect(sqlConfig);
 
         if (pool) {
-            const result = (await pool.request()
-                .input('id', mssql.VarChar, id)
-                .input('full_name', mssql.VarChar, full_name)
-                .input('email', mssql.VarChar, email)
-                .input('password', mssql.VarChar, hash_pwd)
-                .execute('createUser')
-            ).recordset;
+            const exist = (await pool.request()
+                .input("email", mssql.VarChar, email)
+                .execute('existingUser')
+            ).rowsAffected
+            if (exist[0] != 0) {
+                return res.status(201).json({
+                    exists: "Email already registered"
+                })
+            } else {
+                const result = (await pool.request()
+                    .input('id', mssql.VarChar, id)
+                    .input('full_name', mssql.VarChar, full_name)
+                    .input('email', mssql.VarChar, email)
+                    .input('password', mssql.VarChar, hash_pwd)
+                    .execute('createUser')
+                ).recordset;
+                // Return the record set
+                res.status(200).json({
+                    success: 'User created successfully',
+                })
+            }
 
-            // Return the record set
-            res.status(200).json({
-                success: 'User created successfully',
-                result
-            })
+
         } else {
             return res.status(500).json({
                 error: "Could not create pool connection"

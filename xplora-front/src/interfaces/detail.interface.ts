@@ -9,7 +9,8 @@ export interface loginResponse {
 
 export interface signupResponse {
   error: string,
-  success: string
+  success: string,
+  exists: string
 }
 
 export interface usersResponse {

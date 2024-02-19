@@ -10,6 +10,13 @@ import { HistoryComponent } from './components/history/history.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { UsersComponent } from './components/users/users.component';
+import { HttpClient } from '@angular/common/http';
+
+const requireAdmin= (http: HttpClient): Boolean => {
+  // const token = JSON.parse(localStorage.getItem('token')as string);
+  // http.get<{error: string}}
+  return false
+}
 
 export const routes: Routes = [
   {path:"", component: LandingComponent},
@@ -21,7 +28,10 @@ export const routes: Routes = [
     {path: 'profile', component:ProfileComponent},
     {path: 'reviews', component: ReviewsComponent}
   ]},
-  {path: "admin-dashboard", component: AdminDashboardComponent, children: [
+  {path: "admin-dashboard", 
+  component: AdminDashboardComponent,
+  canActivate: [requireAdmin],
+   children: [
     {path: 'users', component: UsersComponent}
   ]},
   {path: "**", component: NotFoundComponent}

@@ -3,6 +3,7 @@ import { createUser } from "../Controllers/signup.controller";
 import { loginUser } from "../Controllers/login.controller";
 import { activateUser, deactivateUser, deleteUser, getUsers, oneUser } from "../Controllers/user.controller";
 import { requireAdmin } from "../Middleware/auth.middleware";
+import { checkDetails } from "../Controllers/details.controller";
 
 const userRoutes = Router();
 
@@ -20,5 +21,7 @@ userRoutes.put('/deactivate/:id', requireAdmin,  deactivateUser);
 userRoutes.put('/activate/:id', requireAdmin,  activateUser);
 // Route to delete a single user by id
 userRoutes.delete('/delete/:id', requireAdmin,  deleteUser);
+// Check user details
+userRoutes.get('/details/user', checkDetails)
 
 export default userRoutes;
