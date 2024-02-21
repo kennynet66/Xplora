@@ -11,7 +11,7 @@ export const requireAuth = ((req: Request, res: Response, next: NextFunction) =>
         if (token) {
             jwt.verify(token, SECRET, (err, decodedToken) => {
                 if (err) {
-                    return res.status(400).json({
+                    return res.status(201).json({
                         error: "You do not have access"
                     })
                 } else {
@@ -19,7 +19,7 @@ export const requireAuth = ((req: Request, res: Response, next: NextFunction) =>
                 }
             })
         } else {
-            return res.status(400).json({
+            return res.status(201).json({
                 error: "You do not have access"
             })
         }
@@ -39,7 +39,7 @@ export const requireAdmin = ((req: Request, res: Response, next: NextFunction) =
         if(token){
             jwt.verify(token, ADMIN_SECRET, (err, decodedToken)=>{
                 if(err){
-                    return res.status(400).json({
+                    return res.status(201).json({
                         error: "You do not have access"
                     })
                 }else {
@@ -47,7 +47,7 @@ export const requireAdmin = ((req: Request, res: Response, next: NextFunction) =
                 }
             })
         }else {
-            return res.status(400).json({
+            return res.status(201).json({
                 error: "You do not have access"
             })
         }

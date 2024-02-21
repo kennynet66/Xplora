@@ -13,7 +13,8 @@ CREATE TABLE Users(
 SELECT * FROM Users
 
 ALTER TABLE users
-ALTER COLUMN profile_img VARCHAR(8000)
+ALTER COLUMN profile_img VARCHAR(8000) DEFAULT 'https://images.pexels.com/photos/15294904/pexels-photo-15294904/free-photo-of-portrait-of-brown-cat.jpeg?auto=compress&cs=tinysrgb&w=600';
+
 
 UPDATE Users
 SET isAdmin = 1

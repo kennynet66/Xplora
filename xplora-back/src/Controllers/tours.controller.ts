@@ -50,3 +50,55 @@ export const createTour = (async (req: Request, res: Response) => {
         })
     }
 })
+
+export const getAllTours = (async (req: Request, res: Response) => {
+    try {
+        const pool = await mssql.connect(sqlConfig);
+
+        if (pool.connected) {
+            const tours = (await pool.request()
+                .execute("getAllUsers")
+            ).recordset;
+            res.status(200).json({
+                tours
+            })
+        } else {
+            res.status(502).json({
+                error: "Could not create pool connection"
+            })
+        }
+        
+        
+    } catch (error) {
+        res.status(500).json({
+            error
+        })
+    }
+})
+
+// Delete tour by id
+export const deleteTour = (async (req: Request, res: Response) => {
+    try {
+        const pool = await mssql.connect(sqlConfig);
+        
+        if (pool.connected) {
+            const id = req.params.id;
+
+            const result = (await pool.request()
+            .input("id", mssql.VarChar, id)
+            .execute("deleteTour")).recordset
+
+            res.status(200).json({
+                result
+            })
+        } else {
+            res.status(502).json({
+                error: "Could not create pool connection"
+            })
+        }
+    } catch (error) {
+        res.status(500).json([
+            error
+        ])
+    }
+})

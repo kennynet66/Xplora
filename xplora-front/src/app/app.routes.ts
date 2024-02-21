@@ -11,11 +11,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { UsersComponent } from './components/users/users.component';
 import { HttpClient } from '@angular/common/http';
-import { AuthGuard } from './auth.guard';
-
-const requireAdmin = (http: HttpClient): Boolean => {
-  return false
-}
+import { AuthGuard } from '../app/Guards/auth.guard';
+import { userGuard } from '../app/Guards/user.guard';
 
 export const routes: Routes = [
   { path: "", component: LandingComponent },
@@ -23,7 +20,9 @@ export const routes: Routes = [
   { path: "signup", component: SignupComponent },
   { path: "contact", component: ContactComponent },
   {
-    path: "user-dashboard", component: UserDashboardComponent, children: [
+    path: "user-dashboard", component: UserDashboardComponent,
+    canActivate: [userGuard],
+    children: [
       { path: 'history', component: HistoryComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'reviews', component: ReviewsComponent }

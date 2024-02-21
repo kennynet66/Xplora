@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-import { DataService } from './services/data.service';
+import { DataService } from '../services/data.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -19,11 +19,16 @@ export class AuthGuard implements CanActivate {
 
     return this.dataservice.checkDetails().pipe(
       map(res => {
-        if (res.decodedToken.details.isAdmin) {
-          return true;
-        } else {
+        if (res.error) {
           this.router.navigate(['login']);
           return false;
+        } else if(res.decodedToken.details.isAdmin) {
+          return true;
+        }else if(!res.decodedToken.details.isAdmin) {
+          this.router.navigate(['login']);
+          return false;
+        } else {
+          return false
         }
       })
     );
