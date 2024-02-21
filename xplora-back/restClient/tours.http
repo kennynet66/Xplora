@@ -2,10 +2,10 @@ POST http://localhost:3000/tour/new-tour
 Content-Type: application/json
 
 {
-    "tour_title": "Camp",
-    "tour_dest":"Kilifi",
+    "tour_title": "Nice tour",
+    "tour_dest":"Malindi",
     "tour_desc": "Take this tour to Kilifi",
-    "tour_img" : "",
+    "tour_img" : "https://cf.bstatic.com/xdata/images/hotel/max1024x768/119872341.jpg?k=9cd71fecdba03f41a0aa72423182327ea10c58765e65c1b7aa8b9a39cea7842b&o=&hp=1",
     "start_date":"24/03/2024",
     "end_date": "24/04/2024"
 }
