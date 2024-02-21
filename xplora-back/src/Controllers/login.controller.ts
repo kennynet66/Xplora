@@ -3,8 +3,8 @@ import mssql from 'mssql';
 import { sqlConfig } from "../config/sqlConfig";
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
-import { user } from "../Interfaces/user.interface";
 import dotenv from 'dotenv';
+import { loginValidator } from "../Validators/login.Validator";
 
 dotenv.config();
 
@@ -37,7 +37,14 @@ export const loginUser = (async (req: Request, res: Response) => {
     try {
         const { email, password } = req.body;
 
-        const pool = await mssql.connect(sqlConfig);
+        const { error } = loginValidator.validate(req.body)
+
+        if(error) {
+            res.status(404).json({
+                error: error.details[0].message
+            })
+        } else {
+            const pool = await mssql.connect(sqlConfig);
 
         if (pool.connected) {
             const user = (await pool.request()
@@ -93,6 +100,9 @@ export const loginUser = (async (req: Request, res: Response) => {
                 error: "Could not create a pool connection"
             })
         }
+        }
+
+        
 
 
     } catch (error) {
