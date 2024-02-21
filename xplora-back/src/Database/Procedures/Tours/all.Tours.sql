@@ -2,4 +2,5 @@ CREATE OR ALTER PROCEDURE getAllTours
 AS
 BEGIN
     SELECT * FROM Tours
+    WHERE isCanceled = 0
 END

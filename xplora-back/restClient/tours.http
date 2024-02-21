@@ -2,10 +2,26 @@ POST http://localhost:3000/tour/new-tour
 Content-Type: application/json
 
 {
-    "tour_title": "Nice tour",
-    "tour_dest":"Malindi",
-    "tour_desc": "Take this tour to Kilifi",
+    "tour_title": "Weekend getaway",
+    "tour_dest":"Kilifi",
+    "tour_desc": "Take this weekend getaway to kilifi",
     "tour_img" : "https://cf.bstatic.com/xdata/images/hotel/max1024x768/119872341.jpg?k=9cd71fecdba03f41a0aa72423182327ea10c58765e65c1b7aa8b9a39cea7842b&o=&hp=1",
     "start_date":"24/03/2024",
     "end_date": "24/04/2024"
 }
+
+###
+GET http://localhost:3000/tour/all-tours
+
+### Delete a tour
+DELETE http://localhost:3000/tour/delete/03edaa7f-f0f8-418a-94d5-7c1e0d03efc0
+
+### Cancel a tour
+
+PUT http://localhost:3000/tour/cancel/d13714c5-46f8-4386-a757-8b13d7646cf7
+
+### Get cancelled tours
+GET http://localhost:3000/tour/cancelled
+
+### Restore a tour
+PUT http://localhost:3000/tour/restore/d13714c5-46f8-4386-a757-8b13d7646cf7

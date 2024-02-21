@@ -86,6 +86,14 @@
   background-color: red;
 }
 
+.delete:hover{
+  background-color: rgb(219, 5, 5);
+}
+
 .cancel {
   background-color: #ffcc00;
+}
+
+.cancel:hover {
+  background-color: #daaf06;
 }
