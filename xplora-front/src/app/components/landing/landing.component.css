@@ -28,46 +28,51 @@
 .destination-cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   text-align: center;
-  color: #000;
+  color: #ffffff;
+  gap: 20px;
 }
 
-.card {
-  max-width: 300px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-  background-color: #ffffff;
-}
 
-.card-img {
+/* .card-img {
   width: 300px;
   height: 250px;
   max-width: 350px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+} */
+.container {
+  position: relative;
+  width: 350px;
 }
 
-.card-desc {
-  margin: 2%;
+.card-img{
+  display: block;
+  /* width: 100%; */
+  height: auto;
+  border-radius: 10px;
+  width: 350px;
+  height: 250px;
 }
 
-.view-more {
-  padding: 5px;
-  margin: 2%;
-  width: 90%;
-  cursor: pointer;
-  color: blue;
-  border-radius: 5px;
-  border: 2px solid blue;
-  background-color: transparent;
+.overlay {
+  border-radius: 10px;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  padding:0px 10px;
+  height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .5s ease;
 }
 
-.view-more:hover {
-  background-color: blue;
-  color: #ffffff;
+.container:hover .overlay {
+  bottom: 0;
+  height: 100%;
 }

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { usersResponse } from '../../interfaces/detail.interface';
+import { deleteResponse, toursResponse, usersResponse } from '../../interfaces/detail.interface';
 
 export interface access {
   decodedToken: {
@@ -62,6 +62,12 @@ export class DataService {
         token: this.getToken()
       }
     })
+  }
+  getTours(){
+    return this.http.get<toursResponse>('http://localhost:3000/tour/all-tours')
+  }
+  deleteTour(id: string) {
+    return this.http.delete<deleteResponse>(`http://localhost:3000/tour/delete/${id}`)
   }
 }
 

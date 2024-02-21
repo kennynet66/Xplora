@@ -1,6 +1,20 @@
 <section class="profile">
-  <h1>Your Profile</h1>
+  <h1 class="page-title">Your profile</h1>
+  <div class="user-details">
+    <div class="profile-pic">
+      <img src="{{user.profile_img}}" class="dp" alt="">
+    </div>
+    <div class="personal-info">
+      <ul>
+        <li class="p-title">Full name: <p>{{user.full_name}}</p></li>
+        <li class="p-title">Email: <p>{{user.email}}</p></li>
+      </ul>
+    </div>
+  </div>
+  <hr>
+  <h1>News</h1>
+  <!-- <h1>Your Profile</h1>
   <img src="{{user.profile_img}}" alt="">
   <h2>{{user.full_name}}</h2>
-  <h3>{{user.email}}</h3>
+  <h3>{{user.email}}</h3> -->
 </section>

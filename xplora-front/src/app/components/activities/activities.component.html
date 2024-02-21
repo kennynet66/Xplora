@@ -1,0 +1,28 @@
+<section class="activities">
+  <div class="errors" *ngIf="errorDiv" >{{errorMsg}}</div>
+  <div class="success" *ngIf="successDiv">{{successMsg}}</div>
+  <h1>All active and tours</h1>
+  <hr>
+  <div class="tours">
+    <div class="card" *ngFor="let tour of tours; let i = index">
+  <div class="container">
+    <img class="card-img" src="{{tour.tour_img}}" alt="">
+    <div class="overlay">
+      <div class="text">
+        <h2>{{tour.tour_title}}</h2>
+        <ul>
+          <li>{{tour.start_date}}</li>
+          <li>{{tour.end_date}}</li>
+        </ul>
+        <p>{{tour.tour_desc}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="action-btns">
+    <button class="delete" (click)="deleteTour(tour.id)" >Delete</button>
+    <button class="cancel">Cancel</button>
+  </div>
+</div>
+
+  </div>
+</section>

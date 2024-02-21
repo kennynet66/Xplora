@@ -1,0 +1,41 @@
+<section class="new-tour">
+  <div class="content">
+    <form [formGroup]="tourForm" (ngSubmit)="createTour()">
+      <h1 class="title">Create New Tour</h1>
+      <div class="input-div">
+        <label for="tour_title">Tour Title:</label>
+        <input type="text" formControlName="tour_title">
+        <p class="error" *ngIf="tourForm.get('tour_title')?.invalid && tourForm.get('tour_title')?.touched && !tourForm.get('tour_title')?.dirty">Title is required</p>
+      </div>
+      <div class="input-div">
+        <label for="tour_dest">Destination: </label>
+        <input type="text" formControlName="tour_dest">
+        <p class="error" *ngIf="tourForm.get('tour_dest')?.invalid && tourForm.get('tour_dest')?.touched && !tourForm.get('tour_dest')?.dirty">Destination is required</p>
+      </div>
+      <div class="input-div">
+        <label for="tour_desc">Tour description:</label>
+        <input type="text" formControlName="tour_desc">
+        <p class="error" *ngIf="tourForm.get('tour_desc')?.invalid && tourForm.get('tour_desc')?.touched && !tourForm.get('tour_desc')?.dirty">Tour description is required</p>
+      </div>
+      <div class="input-div">
+        <label for=" tour_img">Tour Image:</label>
+        <input type="text" formControlName="tour_img">
+        <p class="error" *ngIf="tourForm.get('tour_img')?.invalid && tourForm.get('tour_img')?.touched && !tourForm.get('tour_img')?.dirty">Tour start date is required</p>
+      </div>
+      <div class="input-div">
+        <label for="start_date">Start Date:</label>
+        <input type="date" formControlName="start_date">
+        <p class="error" *ngIf="tourForm.get('start_date')?.invalid && tourForm.get('start_date')?.touched && !tourForm.get('start_date')?.dirty">Tour start date is required</p>
+      </div>
+      <div class="input-div">
+        <label for="end_date">End Date: </label>
+        <input type="date" formControlName="end_date">
+        <p class="error" *ngIf="tourForm.get('end_date')?.invalid && tourForm.get('end_date')?.touched && !tourForm.get('end_date')?.dirty">Tour end date is required</p>
+      </div>
+      <div class="input-div">
+        <input *ngIf="tourForm.invalid" disabled type="submit" id="inactive" class="login-btn" value="Create Tour">
+        <input *ngIf="!tourForm.invalid" type="submit" class="login-btn" value="Create Tour">
+      </div>
+    </form>
+  </div>
+</section>

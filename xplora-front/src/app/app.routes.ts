@@ -13,6 +13,8 @@ import { UsersComponent } from './components/users/users.component';
 import { HttpClient } from '@angular/common/http';
 import { AuthGuard } from '../app/Guards/auth.guard';
 import { userGuard } from '../app/Guards/user.guard';
+import { NewTourComponent } from './components/new-tour/new-tour.component';
+import { ActivitiesComponent } from './components/activities/activities.component';
 
 export const routes: Routes = [
   { path: "", component: LandingComponent },
@@ -34,7 +36,9 @@ export const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       { path: 'profile', component: ProfileComponent },
-      { path: 'users', component: UsersComponent }
+      { path: 'users', component: UsersComponent },
+      { path: 'new-tour', component: NewTourComponent },
+      { path: 'activities', component: ActivitiesComponent}
     ]
   },
   { path: "**", component: NotFoundComponent }
