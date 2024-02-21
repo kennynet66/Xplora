@@ -19,7 +19,6 @@ export const checkDetails = ((req: Request, res: Response)=>{
                         error: "You and access aren't related"
                     })
                 } else {
-                    console.log(decodedToken);
                     res.status(200).json({
                         decodedToken
                     })

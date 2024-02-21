@@ -13,6 +13,7 @@ export interface userDetails {
     full_name: string
     email: string
     profile_img: string
+    isAdmin: Boolean
 }
 
 const maxAge = 3 * 24 * 24 * 60;
@@ -53,9 +54,10 @@ export const loginUser = (async (req: Request, res: Response) => {
                 } else {
                     const details: userDetails = {
                         id: user[0].id,
-                        full_name: user[0].id,
+                        full_name: user[0].full_name,
                         email: user[0].email,
-                        profile_img: user[0].profile_img
+                        profile_img: user[0].profile_img,
+                        isAdmin: user[0].isAdmin
                     }
                     if (!user[0]?.isAdmin) {
                         if (user[0].isDeleted) {

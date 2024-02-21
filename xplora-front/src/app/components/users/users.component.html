@@ -2,16 +2,31 @@
   <div class="error" *ngIf="errorDiv">{{errorMsg}}</div>
   <div class="success" *ngIf="successDiv">{{successMsg}}</div>
   <div class="cards">
-    <div class="test" *ngFor="let user of users; let i = index">
+    <table>
+      <th>
+        <tr>
+          <td>Profile image</td>
+          <td>Full name</td>
+          <td>email</td>
+          <td>Actions</td>
+        </tr>
+      </th>
+        <tr *ngFor="let user of users; let i = index">
+          <td><img src="{{user.profile_img}}" alt="I am a profile pic" class="profile-pic"></td>
+          <td>{{user.full_name}}</td>
+          <td>{{user.email}}</td>
+        </tr>
+    </table>
+    <!-- <div class="test" *ngFor="let user of users; let i = index">
     <div class="card"  *ngIf="!user.isAdmin">
-      <!-- <input *ngIf=""> -->
       <div class="full-name">{{user.full_name}}</div>
       <div class="email">{{user.email}}</div>
+      <img src="{{user.profile_img}}" alt="">
       <div class="actions">
         <button class="delete" (click)="deleteUser(user.id)">Delete</button>
         <button class="deactivate"(click)="deactivateUser(user.id)">Deactivate</button>
       </div>
-    </div>
-  </div>
+    </div> -->
+  <!-- </div> -->
   </div>
 </section>

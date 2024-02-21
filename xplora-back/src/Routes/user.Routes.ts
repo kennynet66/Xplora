@@ -10,7 +10,7 @@ const userRoutes = Router();
 // Route to get all users
 userRoutes.get('/users', requireAdmin, getUsers);
 // Route to get a single user by id
-userRoutes.get('/:id', requireAdmin, oneUser);
+userRoutes.get('/:id', oneUser);
 // Route to register/signup a new user
 userRoutes.post('/signup', createUser);
 // Route to login an existing user

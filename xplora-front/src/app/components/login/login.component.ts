@@ -5,8 +5,6 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from '../footer/footer.component';
 import { Router, RouterLink } from '@angular/router';
 import { loginDetails } from '../../../interfaces/login.interface';
-import { HttpClientModule } from '@angular/common/http';
-import { loginResponse } from '../../../interfaces/detail.interface';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -55,9 +53,7 @@ export class LoginComponent {
   }
 
    login(userDetails: loginDetails) {
-    console.log(userDetails);
     this.authservice.loginUser(userDetails).subscribe(res =>{
-      console.log(res);
 
       if (res.emailerror) {
         return this.errors(res.emailerror)

@@ -17,7 +17,7 @@ export class UsersComponent {
 
   errorDiv = false;
   successDiv = false;
-  
+
   // Error handling
   errors(msg: string) {
     this.errorDiv = true
@@ -39,11 +39,9 @@ export class UsersComponent {
 
   users:user[] = [];
   constructor(private dataService: DataService){
-  }
-  ngOnInit(){
     this.getUsers()
   }
-  
+
   getUsers() {
     this.dataService.getUsers().subscribe(res=>{
       if (res.users){
@@ -51,13 +49,13 @@ export class UsersComponent {
       }else {
         this.errors("Could not get users please refresh")
       }
-      
+
     })
   }
 
   deleteUser(id:string){
     this.dataService.deleteUser(id).subscribe(res=>{
-      
+
       if (res.deleted){
         this.getUsers();
         this.success(res.deleted)
@@ -65,7 +63,7 @@ export class UsersComponent {
         this.errors("Error deleting user")
       }
     })
-    
+
   }
 
   deactivateUser(id:string){
