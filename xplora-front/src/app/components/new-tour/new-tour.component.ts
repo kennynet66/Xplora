@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-new-tour',
@@ -12,7 +14,34 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export class NewTourComponent {
   tourForm!: FormGroup
 
-  constructor(private fb: FormBuilder){
+  successMsg!: string
+  errorMsg!: string
+
+  errorDiv = false
+  successDiv = false
+
+  // Handle errors
+  errors(msg: string){
+    this.errorDiv = true
+    this.errorMsg = msg
+
+    setTimeout(() => {
+      this.errorDiv = false
+    }, 3000);
+  }
+
+  // Handle success messages
+  success(msg: string){
+    this.successDiv = true
+    this.successMsg = msg
+
+    setTimeout(() => {
+      this.tourForm.reset()
+      this.successDiv = false
+    }, 2000);
+  }
+
+  constructor(private fb: FormBuilder, private dataservice: DataService){
     this.tourForm = this.fb.group({
       tour_title: ['', [Validators.required]],
       tour_dest: ['', [Validators.required]],
@@ -25,10 +54,15 @@ export class NewTourComponent {
 
   createTour(){
     if(this.tourForm.valid){
-      console.log(this.tourForm.value);
-      
+      this.dataservice.createTour(this.tourForm.value).subscribe(res =>{
+        if(res.toursuccess){
+          this.success(res.toursuccess)
+        } else{
+          this.errors("There was a problem while creating the tour")
+        }
+      })
     } else {
-      alert("Please fill all the fields")
+      this.errors("Please fill in all the fields")
     }
   }
 }

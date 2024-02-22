@@ -2,6 +2,8 @@
   <div class="content">
     <form [formGroup]="tourForm" (ngSubmit)="createTour()">
       <h1 class="title">Create New Tour</h1>
+      <div class="errors" *ngIf="errorDiv">{{errorMsg}}</div>
+      <div class="success" *ngIf="successDiv">{{successMsg}}</div>
       <div class="input-div">
         <label for="tour_title">Tour Title:</label>
         <input type="text" formControlName="tour_title">
@@ -34,7 +36,7 @@
       </div>
       <div class="input-div">
         <input *ngIf="tourForm.invalid" disabled type="submit" id="inactive" class="login-btn" value="Create Tour">
-        <input *ngIf="!tourForm.invalid" type="submit" class="login-btn" value="Create Tour">
+        <input  *ngIf="!tourForm.invalid" type="submit" class="login-btn" value="Create Tour">
       </div>
     </form>
   </div>

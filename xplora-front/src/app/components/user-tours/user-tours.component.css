@@ -82,6 +82,11 @@
   color: #ffffff;
 }
 
+.book {
+  background-color: green;
+  width: 60%;
+}
+
 .delete {
   background-color: red;
 }

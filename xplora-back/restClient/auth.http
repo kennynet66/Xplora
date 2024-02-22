@@ -5,8 +5,8 @@ Content-Type: application/json
 
 {
     "full_name" : "Kenedy maina",
-    "email": "Kenedy@gmail.com",
-    "password": "test12"
+    "email": "kenedy@gmail.com",
+    "password": "Boomplay@1"
 }
 
 
@@ -17,13 +17,13 @@ Content-Type: application/json
 
 {
     "email": "Kenedy@gmail.com",
-    "password": "test12"
+    "password": "Boomplay@1"
 }
 
 ### Get all users
 
 GET http://localhost:3000/user/users
-token: eyJhbGciOiJIUzI1NisInR5cCI6IkpXVCJ9.eyJkZXRhaWxzIjp7ImlkIjoiYTkxNmUzMzQtY2JlOC00M2RhLWJmNmQtMGViNzM2YmUyZmMwIiwiZnVsbF9uYW1lIjoiYTkxNmUzMzQtY2JlOC00M2RhLWJmNmQtMGViNzM2YmUyZmMwIiwiZW1haWwiOiJrZW5ueW5ldDY2QGdtYWlsLmNvbSIsInByb2ZpbGVfaW1nIjoiaHR0cHM6Ly9lbmNyeXB0ZWQtdGJuMC5nc3RhdGljLmNvbS9pbWFnZXM_cT10Ym46QU5kOUdjVGtZdnE3eldlWWdmMnlEeFBSRXhCay1sNGhoQ3prNkZ5aFdBJnVzcXA9Q0FVIiwiaXNBZG1pbiI6dHJ1ZX0sImlhdCI6MTcwODQyODkxNiwiZXhwIjoxNzA4NTMyNTk2fQ.H6-b-8GW25BbnZYJzSU1QsyuRXiIHkmcVFt14erqcfc
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXRhaWxzIjp7ImlkIjoiYTkxNmUzMzQtY2JlOC00M2RhLWJmNmQtMGViNzM2YmUyZmMwIiwiZnVsbF9uYW1lIjoiS2VuZWR5IG1haW5hIiwiZW1haWwiOiJrZW5ueW5ldDY2QGdtYWlsLmNvbSIsInByb2ZpbGVfaW1nIjoiaHR0cHM6Ly9lbmNyeXB0ZWQtdGJuMC5nc3RhdGljLmNvbS9pbWFnZXM_cT10Ym46QU5kOUdjVGtZdnE3eldlWWdmMnlEeFBSRXhCay1sNGhoQ3prNkZ5aFdBJnVzcXA9Q0FVIiwiaXNBZG1pbiI6dHJ1ZX0sImlhdCI6MTcwODU5MzI2OSwiZXhwIjoxNzA4Njk2OTQ5fQ.3nt9iSfT8gs90w-zsI--qNT_fKZY5_VFyMPAHbKHVYI
 
 ### Get user by id
 GET http://localhost:3000/user/a916e334-cbe8-43da-bf6d-0eb736be2fc0

@@ -1,10 +1,10 @@
 <section class="activities">
   <div class="errors" *ngIf="errorDiv" >{{errorMsg}}</div>
   <div class="success" *ngIf="successDiv">{{successMsg}}</div>
-  <h1>All active and tours</h1>
+  <h1 class="title" >Cancelled tours</h1>
   <hr>
   <div class="tours">
-    <div class="card" *ngFor="let tour of tours; let i = index">
+    <div class="card" *ngFor="let tour of cancelledTours; let i = index">
   <div class="container">
     <img class="card-img" src="{{tour.tour_img}}" alt="">
     <div class="overlay">
@@ -19,8 +19,9 @@
     </div>
   </div>
   <div class="action-btns">
+    <button class= "activate" (click)="restoreTour(tour.id)">Restore</button>
     <button class="delete" (click)="deleteTour(tour.id)" >Delete</button>
-    <button class="cancel" (click)="cancelTour(tour.id)" >Cancel</button>
+    <!-- <button class="cancel" (click)="cancelTour(tour.id)" >Cancel</button> -->
   </div>
 </div>
 

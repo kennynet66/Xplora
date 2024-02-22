@@ -72,3 +72,7 @@ export interface restoreResponse {
   success: string,
   error: string
 }
+
+export interface createTourResponse {
+  toursuccess: string
+}

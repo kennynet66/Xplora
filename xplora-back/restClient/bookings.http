@@ -1,0 +1,7 @@
+### Book a tour
+POST http://localhost:3000/bookings/book/fd5fde44-fcb6-49e8-b433-2fbd72963f5f
+Content-Type: application/json
+
+{
+    "tour_id": "c556174a-14c6-4954-b540-4c7a66f21c6a"
+}

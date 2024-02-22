@@ -82,6 +82,10 @@
   color: #ffffff;
 }
 
+.activate {
+  background-color: #22bb33;
+  color: #000;
+}
 .delete {
   background-color: red;
 }

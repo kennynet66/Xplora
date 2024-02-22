@@ -1,18 +1,16 @@
-import { Component } from '@angular/core';
-import { AdminSidebarComponent } from '../admin-sidebar/admin-sidebar.component';
-import { Router, RouterOutlet } from '@angular/router';
-import { DataService } from '../../services/data.service';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { DataService } from '../../services/data.service';
 
 @Component({
-  selector: 'app-activities',
+  selector: 'app-cancelled',
   standalone: true,
-  imports: [ CommonModule, AdminSidebarComponent],
-  templateUrl: './activities.component.html',
-  styleUrl: './activities.component.css'
+  imports: [ CommonModule ],
+  templateUrl: './cancelled.component.html',
+  styleUrl: './cancelled.component.css'
 })
-export class ActivitiesComponent {
-  tours: any[] = []
+export class CancelledComponent {
+  cancelledTours: any[] = []
   errorMsg!: string;
   successMsg!: string;
 
@@ -38,34 +36,36 @@ export class ActivitiesComponent {
     }, 2000);
   }
 
-  constructor(private dataservice: DataService, private router: Router){
-    this.displayTours()
+  constructor(private dataservice: DataService){
+    this.getCancelledTours()
   }
 
-  displayTours(){
-    this.dataservice.getTours().subscribe(res=>{
-      if(res.tours) {
-        this.tours = res.tours
-      }
+  getCancelledTours(){
+    this.dataservice.getCancelledTours().subscribe(res =>{
+      if(res.tours){
+        this.cancelledTours = res.tours
+      } else if(res.notours){}
     })
-  }
 
+  }
   deleteTour(id: string){
     this.dataservice.deleteTour(id).subscribe(res =>{
       if(res.success){
       this.success(res.success)
-      this.displayTours()
+      this.getCancelledTours()
       } else if(res.error) {
       this.errors(res.error)
       }
     })
   }
-  cancelTour(id: string){
-    this.dataservice.cancelTour(id).subscribe(res =>{
+
+  restoreTour(id:string){
+    this.dataservice.restoreTour(id).subscribe(res =>{
       if(res.success){
         this.success(res.success)
-        this.displayTours()
+        this.getCancelledTours()
       } else if(res.error){
+        this.getCancelledTours()
         this.errors(res.error)
       }
     })

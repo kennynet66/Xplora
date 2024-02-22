@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-admin-sidebar',
@@ -9,5 +9,11 @@ import { RouterLink } from '@angular/router';
   styleUrl: './admin-sidebar.component.css'
 })
 export class AdminSidebarComponent {
+
+  constructor(private router: Router){}
+  logout() {
+    localStorage.clear()
+    this.router.navigate([''])
+   }
 
 }

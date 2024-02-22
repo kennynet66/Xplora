@@ -15,6 +15,8 @@ import { AuthGuard } from '../app/Guards/auth.guard';
 import { userGuard } from '../app/Guards/user.guard';
 import { NewTourComponent } from './components/new-tour/new-tour.component';
 import { ActivitiesComponent } from './components/activities/activities.component';
+import { CancelledComponent } from './components/cancelled/cancelled.component';
+import { UserToursComponent } from './components/user-tours/user-tours.component';
 
 export const routes: Routes = [
   { path: "", component: LandingComponent },
@@ -27,7 +29,8 @@ export const routes: Routes = [
     children: [
       { path: 'history', component: HistoryComponent },
       { path: 'profile', component: ProfileComponent },
-      { path: 'reviews', component: ReviewsComponent }
+      { path: 'reviews', component: ReviewsComponent },
+      { path: 'tours', component: UserToursComponent}
     ]
   },
   {
@@ -38,7 +41,8 @@ export const routes: Routes = [
       { path: 'profile', component: ProfileComponent },
       { path: 'users', component: UsersComponent },
       { path: 'new-tour', component: NewTourComponent },
-      { path: 'activities', component: ActivitiesComponent}
+      { path: 'activities', component: ActivitiesComponent},
+      { path: 'cancelled', component: CancelledComponent}
     ]
   },
   { path: "**", component: NotFoundComponent }

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { cancelResponse, cancelledResponse, deleteResponse, restoreResponse, toursResponse, usersResponse } from '../../interfaces/detail.interface';
+import { cancelResponse, cancelledResponse, createTourResponse, deleteResponse, restoreResponse, toursResponse, usersResponse } from '../../interfaces/detail.interface';
+import { tourInterface } from '../../interfaces/tour.interface';
 
 export interface access {
   decodedToken: {
@@ -63,6 +64,9 @@ export class DataService {
       }
     })
   }
+  createTour(tour_details: tourInterface){
+    return this.http.post<createTourResponse>('http://localhost:3000/tour/new-tour', tour_details)
+  }
   getTours(){
     return this.http.get<toursResponse>('http://localhost:3000/tour/all-tours')
   }
@@ -75,7 +79,7 @@ export class DataService {
   getCancelledTours(){
     return this.http.get<cancelledResponse>('http://localhost:3000/tour/cancelled')
   }
-  restoreUser(id:string){
+  restoreTour(id:string){
     return this.http.put<restoreResponse>(`http://localhost:3000/tour/restore/${id}`,{})
   }
 }

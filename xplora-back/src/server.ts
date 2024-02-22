@@ -3,6 +3,7 @@ import userRoutes from './Routes/user.Routes';
 import dotenv from 'dotenv';
 import cors from 'cors'
 import tourRoutes from './Routes/tour.Routes';
+import bookingRoutes from './Routes/booking.Routes';
 dotenv.config();
 
 const app = express();
@@ -15,6 +16,9 @@ app.use('/user',userRoutes);
 
 // Import tour routes
 app.use('/tour', tourRoutes);
+
+// Import the booking routes
+app.use('/bookings', bookingRoutes);
 
 app.use((error: Error, req: Request, res: Response, next: NextFunction)=>{
     res.status(500).json({

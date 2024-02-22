@@ -64,10 +64,10 @@ export class LoginComponent {
       } else if (res.admin) {
         this.isAdmin = true
         localStorage.setItem('token', JSON.stringify(res.token))
-        return this.success(res.admin, 'admin-dashboard')
+        return this.success(res.admin, 'admin-dashboard/activities')
       } else if (res.user){
         localStorage.setItem('token', JSON.stringify(res.token))
-        return this.success(res.user, 'user-dashboard');
+        return this.success(res.user, 'user-dashboard/tours');
       } else {
         return
       }
