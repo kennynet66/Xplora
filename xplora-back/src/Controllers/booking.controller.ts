@@ -51,3 +51,36 @@ export const bookTour = (async(req: Request, res: Response) => {
         })
     }
 })
+
+// Get user bookings
+export const getUserBookings = (async(req: Request, res: Response)=>{
+    try {
+        const pool = await mssql.connect(sqlConfig);
+        // Check if pool connection was made
+        if(pool.connected){
+            const id:string = req.params.id
+
+            const userBookings =  (await pool.request()
+            .input("user_id", mssql.VarChar, id )
+            .execute('getUserBookings')).recordset
+
+            if(userBookings.length > 0){
+                res.status(200).json({
+                    bookings: userBookings
+                })
+            } else {
+                res.status(200).json({
+                    error: "You do not have any bookings"
+                })
+            }
+        } else {
+            res.status(500).json({
+                error: "Could not create pool connection"
+            })
+        }
+    } catch (error) {
+        res.status(200).json({
+            error
+        })
+    }
+})

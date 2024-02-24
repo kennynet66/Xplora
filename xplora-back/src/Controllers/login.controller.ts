@@ -74,7 +74,7 @@ export const loginUser = (async (req: Request, res: Response) => {
                         } else {
                             const token = createToken(details);
                             return res.status(200).json({
-                                user: "User login success",
+                                user: "login success",
                                 token
                             })
                         }

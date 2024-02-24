@@ -17,7 +17,7 @@ Content-Type: application/json
 
 {
     "email": "Kenedy@gmail.com",
-    "password": "Boomplay@1"
+    "password": "test12"
 }
 
 ### Get all users

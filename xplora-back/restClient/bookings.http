@@ -5,3 +5,7 @@ Content-Type: application/json
 {
     "tour_id": "c556174a-14c6-4954-b540-4c7a66f21c6a"
 }
+
+
+### Get user Bookings
+GET http://localhost:3000/bookings/booked-tours

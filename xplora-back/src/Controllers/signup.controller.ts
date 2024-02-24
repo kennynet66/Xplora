@@ -25,7 +25,7 @@ export const createUser = async (req: Request, res: Response) => {
             // Create a new pool connection
             const pool = await mssql.connect(sqlConfig);
 
-            if (pool) {
+            if (pool.connected) {
                 const exist = (await pool.request()
                     .input("email", mssql.VarChar, email)
                     .execute('existingUser')
