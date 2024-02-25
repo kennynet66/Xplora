@@ -58,10 +58,11 @@ export const getUserBookings = (async(req: Request, res: Response)=>{
         const pool = await mssql.connect(sqlConfig);
         // Check if pool connection was made
         if(pool.connected){
-            const id:string = req.params.id
+            const user_id:string = req.params.user_id
+            const tour_id: string = req.params.tour_id
 
             const userBookings =  (await pool.request()
-            .input("user_id", mssql.VarChar, id )
+            .input("user_id", mssql.VarChar, user_id )
             .execute('getUserBookings')).recordset
 
             if(userBookings.length > 0){

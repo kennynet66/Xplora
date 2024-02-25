@@ -8,4 +8,5 @@ Content-Type: application/json
 
 
 ### Get user Bookings
-GET http://localhost:3000/bookings/booked-tours
+GET http://localhost:3000/bookings/booked-tours/a916e334-cbe8-43da-bf6d-0eb736be2fc0
+
