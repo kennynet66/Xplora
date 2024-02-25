@@ -1,6 +1,8 @@
 <section class="booked-tours">
   <div class="error-div" *ngIf="errorDiv">
-    {{errorMsg}}
+    <img src="../../../assets/nobookings.png" class="no-history" alt="">
+    {{errorMsg}} yet .
+    <p>Visit the <a routerLink='tours' style="cursor: pointer;">Tours </a>page to create a booking</p>
   </div>
   <div class="tours">
     <div class="card" *ngFor="let tour of tours; let i = index">

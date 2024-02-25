@@ -4,10 +4,14 @@ import { Router, RouterOutlet } from '@angular/router';
 import { DataService } from '../../services/data.service';
 import { CommonModule } from '@angular/common';
 
+// NgPrime components
+import { ButtonModule } from 'primeng/button';
+import { MessageService } from 'primeng/api';
+import { MessagesModule } from 'primeng/messages';
 @Component({
   selector: 'app-activities',
   standalone: true,
-  imports: [ CommonModule, AdminSidebarComponent],
+  imports: [ CommonModule, AdminSidebarComponent, ButtonModule, MessagesModule ],
   templateUrl: './activities.component.html',
   styleUrl: './activities.component.css'
 })
@@ -15,6 +19,8 @@ export class ActivitiesComponent {
   tours: any[] = []
   errorMsg!: string;
   successMsg!: string;
+
+  checked= false
 
   errorDiv = false;
   successDiv = false;
@@ -33,12 +39,12 @@ export class ActivitiesComponent {
     this.successDiv = true
     this.successMsg = msg
 
-    setTimeout(() => {
-      this.successDiv = false
-    }, 2000);
+    // setTimeout(() => {
+    //   this.successDiv = false
+    // }, 2000);
   }
 
-  constructor(private dataservice: DataService, private router: Router){
+  constructor(private dataservice: DataService, private router: Router, private message:MessageService){
     this.displayTours()
   }
 

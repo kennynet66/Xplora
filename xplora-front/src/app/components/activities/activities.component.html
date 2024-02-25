@@ -1,7 +1,9 @@
 <section class="activities">
   <div class="errors" *ngIf="errorDiv" >{{errorMsg}}</div>
   <div class="success" *ngIf="successDiv">{{successMsg}}</div>
-  <h1>All active and tours</h1>
+  <p-messages (value)="successMsg" [enableService]="false" [closable]="false"></p-messages>
+
+  <h1 class="title" >All tours</h1>
   <hr>
   <div class="tours">
     <div class="card" *ngFor="let tour of tours; let i = index">

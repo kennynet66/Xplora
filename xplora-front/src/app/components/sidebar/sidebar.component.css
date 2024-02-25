@@ -32,8 +32,9 @@
 }
 
 .logout-btn {
-  background-color: red;
+  background-color: #ED2939;
 }
+
 
 .ulinks{
   display: flex;
@@ -57,7 +58,6 @@
 
 .links >li:hover{
   background-color: #bba2e4a4;
-  border-radius: 5px;
 }
 
 .logout-btn {

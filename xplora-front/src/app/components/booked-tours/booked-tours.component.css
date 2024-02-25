@@ -121,3 +121,16 @@
 .cancel-tour:hover {
   background-color: #EA3C53;
 }
+
+.error-div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 30px;
+}
+
+.no-history {
+  width: 200px;
+}
