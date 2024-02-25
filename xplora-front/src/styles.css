@@ -10,6 +10,11 @@
  padding: 0;
 }
 
+.title{
+  color: #ffffff;
+  font-size: 30px;
+}
+
 body{
   background-image: url('./assets/bg.jpg');
   background-repeat: no-repeat;
@@ -40,3 +45,29 @@ input{
   padding: 10px;
 }
 
+.success {
+  background-color: #22bb33;
+  width: 50%;
+}
+.errors {
+  background-color: #ED2939;
+  width: 50%;
+}
+
+.errors, .success {
+  color: #ffffff;
+  padding: 10px;
+  margin: 2%;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.error-div {
+  position: fixed;
+  display: flex;
+  width: 75vw;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}

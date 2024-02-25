@@ -3,7 +3,7 @@
     <div class="errors" *ngIf="errorDiv" >{{errorMsg}}</div>
     <div class="success" *ngIf="successDiv">{{successMsg}}</div>
   </div>
-  <h1>All active and tours</h1>
+  <h1 class="title">All active and tours</h1>
   <hr>
   <div class="tours">
     <div class="card" *ngFor="let tour of tours; let i = index">

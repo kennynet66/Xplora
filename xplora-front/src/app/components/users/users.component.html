@@ -1,6 +1,8 @@
 <section class="users">
-  <div class="error" *ngIf="errorDiv">{{errorMsg}}</div>
-  <div class="success" *ngIf="successDiv">{{successMsg}}</div>
+  <div class="error-div">
+    <div class="errors" *ngIf="errorDiv" >{{errorMsg}}</div>
+    <div class="success" *ngIf="successDiv">{{successMsg}}</div>
+  </div>
   <div class="cards">
     <table id="users-table">
         <tr>

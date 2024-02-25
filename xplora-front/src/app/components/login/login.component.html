@@ -1,12 +1,14 @@
 <title>Xplora | login</title>
 <app-navbar></app-navbar>
 <div class="content-wrapper">
+  <div class="error-div">
+    <div class="errors" *ngIf="errorDiv" >{{errorMsg}}</div>
+    <div class="success" *ngIf="successDiv">{{successMsg}}</div>
+  </div>
 <div class="login-div">
   <img src="../../../assets/pexels-pixabay-417173 (1).jpg" alt="">
   <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)" class="login-form">
     <h1 style="font-weight: bold;">Login</h1>
-    <div class="error" *ngIf="errorDiv">{{errorMsg}}</div>
-    <div class="success" *ngIf="successDiv">{{successMsg}}</div>
     <div class="input-div">
       <label for="email">Email:</label> <br>
       <input type="email" formControlName="email" placeholder="johndoe@gmail.com">
