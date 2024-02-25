@@ -67,7 +67,7 @@ export const getUserBookings = (async(req: Request, res: Response)=>{
 
             if(userBookings.length > 0){
                 res.status(200).json({
-                    bookings: userBookings
+                    success: userBookings
                 })
             } else {
                 res.status(200).json({

@@ -76,3 +76,18 @@ export interface restoreResponse {
 export interface createTourResponse {
   toursuccess: string
 }
+
+export interface bookedTourResponse {
+  success: [
+    {
+      id: [],
+      tour_title: string,
+      tour_dest: string,
+      tour_desc: string,
+      tour_img: string,
+      start_date: string,
+      end_date: string,
+    }
+  ]
+  error: string
+}

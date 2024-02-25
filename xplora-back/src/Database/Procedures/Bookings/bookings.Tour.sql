@@ -10,7 +10,10 @@ BEGIN
 -- INNER JOIN Bookings
 -- ON Users.id = @user_id;
 
-SELECT * FROM Tours
-INNER JOIN Bookings
-ON Bookings.user_id = @user_id;
+SELECT *
+FROM Bookings
+INNER JOIN Tours ON Bookings.tour_id = Tours.id
+WHERE Bookings.user_id = @user_id;
 END
+
+DELETE FROM Bookings

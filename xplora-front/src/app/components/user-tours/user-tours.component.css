@@ -1,5 +1,6 @@
 .success {
   background-color: #22bb33;
+  width: 50%;
 }
 .errors {
   background-color: #ED2939;

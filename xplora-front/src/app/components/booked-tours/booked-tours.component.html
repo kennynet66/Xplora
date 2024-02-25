@@ -1,8 +1,7 @@
-<section class="activities">
-  <div class="errors" *ngIf="errorDiv" >{{errorMsg}}</div>
-  <div class="success" *ngIf="successDiv">{{successMsg}}</div>
-  <h1>All active and tours</h1>
-  <hr>
+<section class="booked-tours">
+  <div class="error-div" *ngIf="errorDiv">
+    {{errorMsg}}
+  </div>
   <div class="tours">
     <div class="card" *ngFor="let tour of tours; let i = index">
   <div class="container">
@@ -19,8 +18,7 @@
     </div>
   </div>
   <div class="action-btns">
-    <button class="delete" (click)="deleteTour(tour.id)" ><i class="fa-solid fa-trash"></i> Delete</button>
-    <button class="cancel" (click)="cancelTour(tour.id)" ><i class="fa-solid fa-xmark"></i> Cancel</button>
+    <button class="cancel-tour"><i class="fa-solid fa-xmark"></i> Cancel Tour</button>
   </div>
 </div>
 

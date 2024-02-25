@@ -32,7 +32,7 @@
 }
 
 .logout-btn {
-  background-color: red;
+  background-color: #ED2939;
 }
 
 .ulinks{
@@ -40,7 +40,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  border: 2px solid red;
+  border: 2px solid #ED2939;
 }
 
 .title {
@@ -71,5 +71,5 @@
 }
 
 .logout-btn:hover {
-  background-color: rgb(224, 13, 13);
+  background-color: #EA3C53;
 }

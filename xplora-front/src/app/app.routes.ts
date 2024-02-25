@@ -17,6 +17,7 @@ import { NewTourComponent } from './components/new-tour/new-tour.component';
 import { ActivitiesComponent } from './components/activities/activities.component';
 import { CancelledComponent } from './components/cancelled/cancelled.component';
 import { UserToursComponent } from './components/user-tours/user-tours.component';
+import { BookedToursComponent } from './components/booked-tours/booked-tours.component';
 
 export const routes: Routes = [
   { path: "", component: LandingComponent },
@@ -30,7 +31,8 @@ export const routes: Routes = [
       { path: 'history', component: HistoryComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'reviews', component: ReviewsComponent },
-      { path: 'tours', component: UserToursComponent}
+      { path: 'tours', component: UserToursComponent},
+      { path: 'booked-tours', component: BookedToursComponent},
     ]
   },
   {
