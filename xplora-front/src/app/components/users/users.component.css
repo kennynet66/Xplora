@@ -1,34 +1,18 @@
-.test{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-.cards{
+.test {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
 }
 
-.error {
-  text-align: center;
-  color: #ffffff;
-  padding: 10px;
-  margin: 2%;
-  border-radius: 5px;
-  background-color: red;
-}
-.success {
-  text-align: center;
-  color: #ffffff;
-  padding: 10px;
-  margin: 2%;
-  border-radius: 5px;
-  background-color: greenyellow;
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
-.profile-pic{
+.profile-pic {
   width: 60px;
   border-radius: 50%;
   object-fit: contain;
@@ -44,16 +28,17 @@
   width: 100%;
 }
 
-#users-table td, #users-table th {
+#users-table td,
+#users-table th {
   border: 1px solid #dbdbdb;
   padding: 8px;
   color: #ffffff;
   font-size: 20px;
 }
 
-/* #users-table tr:nth-child(even){background-color: #f2f2f2;} */
-
-#users-table tr:hover {background-color: #ddd;}
+#users-table tr:hover {
+  background-color: #ddd;
+}
 
 #users-table th {
   padding-top: 12px;
@@ -64,6 +49,6 @@
 }
 
 .actions {
-  display:flex;
+  display: flex;
   gap: 20px;
 }

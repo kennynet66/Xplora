@@ -1,11 +1,16 @@
 <section class="activities">
-  <div class="errors" *ngIf="errorDiv" >{{errorMsg}}</div>
-  <div class="success" *ngIf="successDiv">{{successMsg}}</div>
-  <p-messages (value)="successMsg" [enableService]="false" [closable]="false"></p-messages>
-
+  <div class="error-div">
+    <div class="errors" *ngIf="errorDiv" >{{errorMsg}}</div>
+    <div class="success" *ngIf="successDiv">{{successMsg}}</div>
+  </div>
+  <div class="error-div" *ngIf="noTours">
+    <img src="../../../assets/nobookings.png" class="no-history" alt="">
+    {{errorMs}}
+    <p>Visit the <a routerLink='tours' style="cursor: pointer;">New tour </a>page to create a Tour</p>
+  </div>
   <h1 class="title" >All tours</h1>
   <hr>
-  <div class="tours">
+  <div class="tours" *ngIf="tours.length >= 1">
     <div class="card" *ngFor="let tour of tours; let i = index">
   <div class="container">
     <img class="card-img" src="{{tour.tour_img}}" alt="">

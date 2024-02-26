@@ -33,27 +33,6 @@
   border: none;
 }
 
-.error {
-  color: red;
-  margin: 1%;
-}
-
-.success {
-  background-color: #22bb33;
-}
-.errors {
-  background-color: red;
-}
-
-.errors, .success {
-  color: #ffffff;
-  padding: 5px;
-  margin: 2%;
-  text-align: center;
-  font-weight: bold;
-  border-radius: 5px;
-}
-
 #inactive {
   background-color: #dbdbdb !important;
   cursor: not-allowed;

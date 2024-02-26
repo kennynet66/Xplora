@@ -9,15 +9,15 @@
           <th>Profile image</th>
           <th>Full name</th>
           <th>email</th>
-          <th>State</th>
+          <th>Role</th>
           <th>Actions</th>
         </tr>
         <tr *ngFor="let user of users; let i = index">
           <td><img src="{{user.profile_img}}" alt="I am a profile pic" title="{{user.full_name}}" class="profile-pic"></td>
           <td>{{user.full_name}}</td>
           <td>{{user.email}}</td>
-          <td *ngIf="!user.isAdmin"><i class="fa-solid fa-user"></i></td>
-          <td *ngIf="user.isAdmin"><i class="fa-solid fa-crown"></i></td>
+          <td *ngIf="!user.isAdmin" title="User"><i class="fa-solid fa-user"></i></td>
+          <td *ngIf="user.isAdmin" title="Admin"><i class="fa-solid fa-crown"></i></td>
           <td class="actions-cont">
             <div class="actions">
               <i class="fa-solid fa-trash" (click)="deleteUser(user.id)" title="delete user" style="color: #f60909; cursor: pointer;"></i>

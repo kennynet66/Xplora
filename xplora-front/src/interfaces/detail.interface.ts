@@ -40,6 +40,7 @@ export interface toursResponse {
       isActive: boolean
     }
   ]
+  error: string;
 }
 
 export interface deleteResponse {

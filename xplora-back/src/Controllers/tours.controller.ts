@@ -60,9 +60,16 @@ export const getAllTours = (async (req: Request, res: Response) => {
             const tours = (await pool.request()
                 .execute("getAllTours")
             ).recordset;
-            res.status(200).json({
+            if(tours.length >= 1) {
+                res.status(200).json({
                 tours
             })
+            }else {
+                res.status(200).json({
+                    error: "No tours Available at the moment"
+                })
+            }
+            
         } else {
             res.status(502).json({
                 error: "Could not create pool connection"

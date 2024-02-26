@@ -1,11 +1,11 @@
 <section class="new-tour">
   <div class="content">
     <form [formGroup]="tourForm" (ngSubmit)="createTour()">
-      <h1 class="title">Create New Tour</h1>
       <div class="error-div">
         <div class="errors" *ngIf="errorDiv" >{{errorMsg}}</div>
         <div class="success" *ngIf="successDiv">{{successMsg}}</div>
       </div>
+      <h1 class="title">Create New Tour</h1>
       <div class="input-div">
         <label for="tour_title">Tour Title:</label>
         <input type="text" formControlName="tour_title">

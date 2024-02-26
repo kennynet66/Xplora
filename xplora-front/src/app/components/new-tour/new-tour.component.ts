@@ -36,7 +36,6 @@ export class NewTourComponent {
     this.successMsg = msg
 
     setTimeout(() => {
-      this.tourForm.reset()
       this.successDiv = false
     }, 2000);
   }
@@ -57,6 +56,7 @@ export class NewTourComponent {
       this.dataservice.createTour(this.tourForm.value).subscribe(res =>{
         if(res.toursuccess){
           this.success(res.toursuccess)
+          this.tourForm.reset()
         } else{
           this.errors("There was a problem while creating the tour")
         }

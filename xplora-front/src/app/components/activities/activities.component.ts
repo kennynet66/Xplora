@@ -18,12 +18,22 @@ import { MessagesModule } from 'primeng/messages';
 export class ActivitiesComponent {
   tours: any[] = []
   errorMsg!: string;
+  errorMs!: string;
   successMsg!: string;
 
   checked= false
 
   errorDiv = false;
   successDiv = false;
+
+  noTours = false
+
+  // Handle no tours
+  no_tours(msg:string){
+    this.noTours = true
+
+    this.errorMs = msg
+  }
 
    // Error handling
    errors(msg: string) {
@@ -39,9 +49,9 @@ export class ActivitiesComponent {
     this.successDiv = true
     this.successMsg = msg
 
-    // setTimeout(() => {
-    //   this.successDiv = false
-    // }, 2000);
+    setTimeout(() => {
+      this.successDiv = false
+    }, 2000);
   }
 
   constructor(private dataservice: DataService, private router: Router, private message:MessageService){
@@ -52,6 +62,8 @@ export class ActivitiesComponent {
     this.dataservice.getTours().subscribe(res=>{
       if(res.tours) {
         this.tours = res.tours
+      } else if (res.error){
+        this.no_tours(res.error)
       }
     })
   }
